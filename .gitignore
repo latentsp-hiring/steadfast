@@ -1,1 +1,6 @@
 .env
+
+# Bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
