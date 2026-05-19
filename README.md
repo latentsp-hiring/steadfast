@@ -187,6 +187,44 @@ python src/pipeline.py --eval
 
 ---
 
+## Submission
+
+When you're ready to submit your completed assignment, use the provided CLI tool to bundle and upload your repository.
+
+### Quick Submit
+
+From the root of your assignment repository:
+
+```bash
+./run.sh publish
+```
+
+This will:
+1. Bundle your git repository (respecting `.gitignore`)
+2. Upload directly to our evaluation system
+3. Print a confirmation message
+
+### What Gets Uploaded
+
+The CLI bundles:
+- All git-tracked files in your repository
+- The `.git` directory (we review your commit history)
+
+**Note:** The archive respects `.gitignore` and excludes files like `.env`, `node_modules`, `.venv`, etc.
+
+### Troubleshooting
+
+**"Not inside a git repository"**
+- Make sure you've initialized git: `git init && git add -A && git commit -m "initial"`
+
+**Binary not found**
+- Run directly: `bin/latent-cli-$(uname -s | tr '[:upper:]' '[:lower:]')-$(uname -m) publish`
+
+**Upload fails**
+- Ensure you're connected to the internet
+
+---
+
 ## FAQ
 
 **Q: Can I use frameworks like LangChain, LlamaIndex, DSPy?**
