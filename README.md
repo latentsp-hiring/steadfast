@@ -202,7 +202,20 @@ From the root of your assignment repository:
 This will:
 1. Bundle your git repository (respecting `.gitignore`)
 2. Upload directly to our evaluation system
-3. Print a confirmation message
+3. Ask you to confirm your email address
+4. Print a confirmation message and instructions
+
+### Providing Your Email
+
+The CLI needs your email address to notify you that the upload succeeded. It will:
+
+1. First try to read your email from `git config user.email`
+2. If it is not set, prompt you to enter it interactively
+3. Alternatively, pass it directly: `./run.sh publish --email you@example.com`
+
+### Confirmation
+
+After the upload completes, you will be asked to reply to the email you received for this assignment with your name and the repository name. Please send that reply so we can match your submission to your application.
 
 ### What Gets Uploaded
 
@@ -216,6 +229,9 @@ The CLI bundles:
 
 **"Not inside a git repository"**
 - Make sure you've initialized git: `git init && git add -A && git commit -m "initial"`
+
+**"Repository must have at least one commit after initialization"**
+- The initial repository setup commit is not enough. Make at least one additional commit with your work before submitting.
 
 **Binary not found**
 - Run directly: `bin/latent-cli-$(uname -s | tr '[:upper:]' '[:lower:]')-$(uname -m) publish`
